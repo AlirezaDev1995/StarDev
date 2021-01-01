@@ -8,23 +8,39 @@ namespace StarDev.Controllers
 {
     public class HomeController : Controller
     {
+        // GET: Home
         public ActionResult Index()
+
+        {
+            return View();
+        
+        }
+        public ActionResult NotFound()
         {
             return View();
         }
-
-        public ActionResult About()
+        public ActionResult Course(string name)
         {
-            ViewBag.Message = "Your application description page.";
+            DAL.StarDevEntities1 DC = new DAL.StarDevEntities1();
+            StarDev.Models.SearchContent _m = new Models.SearchContent();
+            var q = (from A in DC.MainContent
+                     where
+                     (!string.IsNullOrEmpty(name) ? A.Title.Contains(name) || A.Content.Contains(name) : true)
+                     select A).ToList();
 
-            return View();
+            _m.GetAllContent = q;
+
+            if (q.Count > 0)
+            {
+
+                return View(_m);
+            }
+            else
+            {
+                return RedirectToAction("NotFound", "Home");
+            }
         }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
+    
     }
 }
