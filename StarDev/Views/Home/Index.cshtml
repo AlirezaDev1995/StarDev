@@ -1,214 +1,189 @@
-﻿@model StarDev.Models.SearchContent
+﻿@model StarDev.Models.Courses
 @{
     ViewBag.Title = "Index";
 }
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-<div class="Web-site">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-3">
-                <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
-                    </ol>
-
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner">
-
-                        <div class="item active">
-                            <img src="~/Img/Python.jpg" alt="Los Angeles" style="width:100%;">
-                            <div class="carousel-caption">
-                                <h3>Los Angeles</h3>
-                                <p>LA is always so much fun!</p>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="~/Img/1600x900_coding-source-code.jpg" alt="Chicago" style="width:100%;">
-                            <div class="carousel-caption">
-                                <h3>Chicago</h3>
-                                <p>Thank you, Chicago!</p>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="~/Img/struc.png" alt="New York" style="width:100%;">
-                            <div class="carousel-caption">
-                                <h3>New York</h3>
-                                <p>We love the Big Apple!</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- Left and right controls -->
-                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="marketing">
+                <div>
+                    <i class="fa fa-shopping-bag" aria-hidden="true"></i>
                 </div>
+                <h3>Marketing Development</h3>
+                <p>Offer multiple products from multiple sellers. Give your buyers a one-stop-shop to buy everything they need and expand the platform fast.</p>
             </div>
-
-            <div class="col-md-3">
-                <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
-                    </ol>
-
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner">
-
-                        <div class="item active">
-                            <img src="~/Img/Python.jpg" alt="Los Angeles" style="width:100%;">
-                            <div class="carousel-caption">
-                                <h3>Los Angeles</h3>
-                                <p>LA is always so much fun!</p>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="~/Img/1600x900_coding-source-code.jpg" alt="Chicago" style="width:100%;">
-                            <div class="carousel-caption">
-                                <h3>Chicago</h3>
-                                <p>Thank you, Chicago!</p>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="~/Img/struc.png" alt="New York" style="width:100%;">
-                            <div class="carousel-caption">
-                                <h3>New York</h3>
-                                <p>We love the Big Apple!</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- Left and right controls -->
-                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+        </div>
+        <div class="col-md-6">
+            <div class="manage">
+                <div>
+                    <i class="fa fa-desktop" aria-hidden="true"></i>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
-                    </ol>
-
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner">
-
-                        <div class="item active">
-                            <img src="~/Img/Python.jpg" alt="Los Angeles" style="width:100%;">
-                            <div class="carousel-caption">
-                                <h3>Los Angeles</h3>
-                                <p>LA is always so much fun!</p>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="~/Img/1600x900_coding-source-code.jpg" alt="Chicago" style="width:100%;">
-                            <div class="carousel-caption">
-                                <h3>Chicago</h3>
-                                <p>Thank you, Chicago!</p>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="~/Img/struc.png" alt="New York" style="width:100%;">
-                            <div class="carousel-caption">
-                                <h3>New York</h3>
-                                <p>We love the Big Apple!</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- Left and right controls -->
-                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
-                    </ol>
-
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner">
-
-                        <div class="item active">
-                            <img src="~/Img/Python.jpg" alt="Los Angeles" style="width:100%;">
-                            <div class="carousel-caption">
-                                <h3>Los Angeles</h3>
-                                <p>LA is always so much fun!</p>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="~/Img/1600x900_coding-source-code.jpg" alt="Chicago" style="width:100%;">
-                            <div class="carousel-caption">
-                                <h3>Chicago</h3>
-                                <p>Thank you, Chicago!</p>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="~/Img/struc.png" alt="New York" style="width:100%;">
-                            <div class="carousel-caption">
-                                <h3>New York</h3>
-                                <p>We love the Big Apple!</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- Left and right controls -->
-                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
+                <h3>Project Management</h3>
+                <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attribut</p>
             </div>
 
-            </div>
-
-          
         </div>
     </div>
+</div>
+
+
+<div class="OurWork">
+    <div class="container">
+        <div class="OurWork_head">
+            <h2>We’re a full-service software development company</h2>
+            <p>
+                We are a team of professional software developers, project managers, QA engineers, business analysts, and designers. We’ll drive the delivery of your ecommerce platform forward. Our commitment to honest communication and diligence will make working with us feel like having an in-house team.
+            </p>
+        </div>
+        <div class="OurWork_body">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="Ourservice">
+                        <div style="">
+                            <i class="fa fa-desktop" aria-hidden="true"></i>
+                            <span>
+                                web
+                                <br />
+                                Development
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="Ourservice">
+                        <div class="">
+                            <i class="fa fa-mobile" aria-hidden="true"></i>
+                            <span>
+                                Mobile
+                                <br />
+                                Development
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="Ourservice">
+                        <div class="Ourservice-bg">
+                            <i class="fa fa-mobile" aria-hidden="true"></i>
+
+                            <span>
+                                Product
+                                <br />
+                                Design
+
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+@*start section our features*@
+<div class="Ourfeatures">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="Ourfeatures-info">
+                    <span>OurFeatures</span>
+                    <h3>Enjoy Preconfigured Setups or Full Control</h3>
+                    <p>Lorem ipsum, or lipsum as it is sometimes knowas it is sometimes knowas it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attribut</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="animated">
+                    <img src="~/Img/1X_Hosting_Illustration_02-510x300.png" width="100%" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@*start section why us*@
+
+<div style="background-color:#fff; margin-top:40px;padding:10px;">
+    <div class="container">
+        <h2 class="text-center">Why should we choose?</h2>
+        <p class="text-center">Clear, Concise, Comprehensive, and Practical with No Fluff!</p>
+        <div class="row">
+            <div class="col-sm-6 col-md-4">
+                <div class="text-center">
+                    <img src="~/Img/Boost.png" alt="" height="100px" />
+                    <h3>Boost Your Career Option</h3>
+                    <p>
+                        We’re full-on obsessive about the quality of our videos to create
+                        the best possible learning experience for you across ALL devices.
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="text-center">
+                    <img src="~/Img/Boost.png" alt="" height="100px" />
+                    <h3>Boost Your Career Option</h3>
+                    <p>
+                        We’re full-on obsessive about the quality of our videos to create
+                        the best possible learning experience for you across ALL devices.
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="text-center">
+                    <img src="~/Img/Boost.png" alt="" height="100px" />
+
+                    <h3>Boost Your Career Option</h3>
+                    <p>
+                        We’re full-on obsessive about the quality of our videos to create
+                        the best possible learning experience for you across ALL devices.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-4">
+                <div class="text-center">
+                    <img src="~/Img/Boost.png" alt="" height="100px" />
+                    <h3>Boost Your Career Option</h3>
+                    <p>
+                        We’re full-on obsessive about the quality of our videos to create
+                        the best possible learning experience for you across ALL devices.
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="text-center">
+                    <img src="~/Img/Boost.png" alt="" height="100px" />
+                    <h3>Boost Your Career Option</h3>
+                    <p>
+                        We’re full-on obsessive about the quality of our videos to create
+                        the best possible learning experience for you across ALL devices.
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="text-center">
+                    <img src="~/Img/Boost.png" alt="" height="100px" />
+                    <h3>Boost Your Career Option</h3>
+                    <p>
+                        We’re full-on obsessive about the quality of our videos to create
+                        the best possible learning experience for you across ALL devices.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
 

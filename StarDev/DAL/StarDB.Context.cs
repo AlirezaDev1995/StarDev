@@ -13,10 +13,10 @@ namespace StarDev.DAL
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class StarDevEntities1 : DbContext
+    public partial class StarDB : DbContext
     {
-        public StarDevEntities1()
-            : base("name=StarDevEntities1")
+        public StarDB()
+            : base("name=StarDB")
         {
         }
     
@@ -25,7 +25,8 @@ namespace StarDev.DAL
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<MainContent> MainContent { get; set; }
+        public virtual DbSet<Courses> Courses { get; set; }
         public virtual DbSet<Image> Image { get; set; }
+        public virtual DbSet<ViewCourse> ViewCourse { get; set; }
     }
 }

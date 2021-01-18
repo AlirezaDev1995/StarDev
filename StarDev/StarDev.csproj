@@ -204,73 +204,99 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImagesController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
+    <Compile Include="DAL\Courses.cs">
+      <DependentUpon>StarDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\Image.cs">
-      <DependentUpon>StarDev.tt</DependentUpon>
+      <DependentUpon>StarDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\MainContent.cs">
-      <DependentUpon>StarDev.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\StarDev.Context.cs">
+    <Compile Include="DAL\StarDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>StarDev.Context.tt</DependentUpon>
+      <DependentUpon>StarDB.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\StarDev.cs">
+    <Compile Include="DAL\StarDB.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>StarDev.tt</DependentUpon>
+      <DependentUpon>StarDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\StarDev.Designer.cs">
+    <Compile Include="DAL\StarDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>StarDev.edmx</DependentUpon>
+      <DependentUpon>StarDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ViewCourse.cs">
+      <DependentUpon>StarDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Courses.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\SearchContent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Content\Scss\Header_Footer.scss" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\css\Category.css" />
     <Content Include="Content\css\Font_A\all.css" />
+    <Content Include="Content\Scss\Category.scss" />
+    <None Include="Content\Scss\Header_Footer.scss" />
     <Content Include="Content\css\Header_Footer.css" />
     <Content Include="Content\css\Main_project.css" />
-    <Content Include="DAL\StarDev.Context.tt">
+    <Content Include="DAL\StarDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>StarDev.edmx</DependentUpon>
-      <LastGenOutput>StarDev.Context.cs</LastGenOutput>
+      <DependentUpon>StarDB.edmx</DependentUpon>
+      <LastGenOutput>StarDB.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DAL\StarDev.tt">
+    <Content Include="DAL\StarDB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>StarDev.edmx</DependentUpon>
-      <LastGenOutput>StarDev.cs</LastGenOutput>
+      <DependentUpon>StarDB.edmx</DependentUpon>
+      <LastGenOutput>StarDB.cs</LastGenOutput>
     </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\Web-fonts\fa-brands-400.svg" />
+    <Content Include="fonts\Web-fonts\fa-regular-400.svg" />
+    <Content Include="fonts\Web-fonts\fa-solid-900.svg" />
     <Content Include="Global.asax" />
     <Content Include="Img\1600x900_coding-source-code.jpg" />
+    <Content Include="Img\1X_Hosting_Illustration_02-510x300.png" />
+    <Content Include="Img\Boost.png" />
     <Content Include="Img\Python.jpg" />
     <Content Include="Img\struc.png" />
+    <Content Include="Img\Untitled-1.png" />
+    <Content Include="Img\Untitleds-1.png" />
+    <Content Include="Img\Untitlseds-1.png" />
+    <Content Include="Img\Unzitled-1.png" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
-    <Content Include="Scripts\all.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Scss\Main_Project.scss" />
-    <EntityDeploy Include="DAL\StarDev.edmx">
+    <Content Include="fonts\Web-fonts\fa-brands-400.eot" />
+    <Content Include="fonts\Web-fonts\fa-brands-400.ttf" />
+    <Content Include="fonts\Web-fonts\fa-brands-400.woff" />
+    <Content Include="fonts\Web-fonts\fa-brands-400.woff2" />
+    <Content Include="fonts\Web-fonts\fa-regular-400.eot" />
+    <Content Include="fonts\Web-fonts\fa-regular-400.ttf" />
+    <Content Include="fonts\Web-fonts\fa-regular-400.woff" />
+    <Content Include="fonts\Web-fonts\fa-regular-400.woff2" />
+    <Content Include="fonts\Web-fonts\fa-solid-900.eot" />
+    <Content Include="fonts\Web-fonts\fa-solid-900.ttf" />
+    <Content Include="fonts\Web-fonts\fa-solid-900.woff" />
+    <Content Include="fonts\Web-fonts\fa-solid-900.woff2" />
+    <EntityDeploy Include="DAL\StarDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>StarDev.Designer.cs</LastGenOutput>
+      <LastGenOutput>StarDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="DAL\StarDev.edmx.diagram">
-      <DependentUpon>StarDev.edmx</DependentUpon>
+    <Content Include="DAL\StarDB.edmx.diagram">
+      <DependentUpon>StarDB.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\StarDEv.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -296,7 +322,6 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -311,14 +336,16 @@
     <Content Include="Views\Category\JavaCourse.cshtml" />
     <Content Include="Views\Category\PaythonCourse.cshtml" />
     <Content Include="Views\AboutUs\AboutTeam.cshtml" />
-    <Content Include="Views\Home\Course.cshtml" />
+    <Content Include="Views\Category\LayoutCourse.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Coures\Course.cshtml" />
+    <Content Include="Views\Coures\Courses.cshtml" />
+    <Content Include="Views\Coures\ViewCourse.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="BL\" />
     <Folder Include="FrameWork\" />
     <Folder Include="Function\" />
-    <Folder Include="Views\Coures\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

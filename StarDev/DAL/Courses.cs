@@ -12,10 +12,10 @@ namespace StarDev.DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class MainContent
+    public partial class Courses
     {
-        public int ID { get; set; }
+        public int CourseID { get; set; }
         public string Title { get; set; }
-        public string Content { get; set; }
+        public string content { get; set; }
     }
 }

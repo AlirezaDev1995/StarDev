@@ -23,13 +23,13 @@ namespace StarDev
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/jquery-1.10.2.min.js",
 
-                      "~/Scripts/_bootstrap.min.js",
-                      "~/Scripts/all.js", 
+                      "~/Scripts/bootstrap.min.js",
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/css/Font_A/all.css",
                       "~/Content/css/Main_project.css",
+                      "~/Content/css/Category.css",
                       "~/Content/site.css")); 
         }
     }

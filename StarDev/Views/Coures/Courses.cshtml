@@ -1,0 +1,110 @@
+﻿
+@model StarDev.Models.Courses
+
+
+@{
+    ViewBag.Title = "Courses";
+}
+<script>
+
+</script>
+
+<div>
+    <div class="container">
+        <div class="category">
+            <div>
+                <div class="category-course" style="display:inline-block">
+                    <button class="btn btn-info" id="myelement">
+                        category
+                        <span style="color:blue;">
+                            All
+                            <i class="fas fa-angle-down"></i>
+                        </span>
+                    </button>
+                    <ul id="#another-element" class="click" style="display:none;">
+                        <li><a href="#">content</a></li>
+                        <li><a href="#">content</a></li>
+                        <li><a href="#">content</a></li>
+                        <li><a href="#">content</a></li>
+                        <li><a href="#">content</a></li>
+                    </ul>
+                </div>
+                <div class="course-teach" style="display:inline-block;">
+                    <button class="btn btn-default" id="">
+                        Teacher
+                        <span style="color:blue;">
+                            All
+                            <i class="fas fa-angle-down"></i>
+                        </span>
+                    </button>
+                    <ul id="#another-element" class="click" style="display:none;">
+                        <li><a href="#">content</a></li>
+                        <li><a href="#">content</a></li>
+                        <li><a href="#">content</a></li>
+                        <li><a href="#">content</a></li>
+                        <li><a href="#">content</a></li>
+                    </ul>
+
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown button
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <form action="/Coures/Courses" method="post" enctype="multipart/form-data">
+                <input type="text" name="name" value="" placeholder="Search" />
+
+                <button type="submit" class="">
+                    <i class="fas fa-search search-icon "></i>
+                </button>
+            </form>
+        </div>
+        <div class="All-Course">
+            <div class="row">
+
+                @foreach (var i in Model.GetAllCourse)
+                {
+
+                @(new HtmlString(i.content));
+                }
+            </div>
+
+        </div>
+
+
+        <nav aria-label="Page navigation example">
+            <ul class="pagination page_control">
+                @{
+                    if (ViewBag.PageID > 1)
+                    {
+                        <li class="page-item"><a class="page-link" href="@Url.Action("Courses",new {Page=ViewBag.PageID-1 })"> قبلی</a></li>
+
+                    }
+                }
+                @for (int i = (ViewBag.PageID - 2 > 0) ? i = ViewBag.PageID - 2 : i = 1; (ViewBag.PageID + 2 > ViewBag.PageCount) ? i <= ViewBag.PageCount : i < ViewBag.PageID + 2; i++)
+                {
+                    <li class="page-item"><a class="page-link" href="@Url.Action("Courses",new { Page=i})">@i</a></li>
+                }
+                @{
+                    if (ViewBag.PageID < ViewBag.PageCount)
+                    {
+                        <li class="page-item"><a class="page-link" href="@Url.Action("Courses",new {Page=ViewBag.PageID+1 })"> بعدی</a></li>
+
+                    }
+                }
+            </ul>
+        </nav>
+
+    </div>
+
+
+</div>
+
+

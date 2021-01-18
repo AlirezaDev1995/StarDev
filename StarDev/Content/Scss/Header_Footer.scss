@@ -3,6 +3,11 @@
 
 $mainColor: red;
 
+.bg-top {
+    color: #fff;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}
+
 .TopHeader {
     display: flex;
     justify-content: space-between;
@@ -52,45 +57,18 @@ $mainColor: red;
             ol {
                 position: relative;
                 padding: 0;
-
-                li:hover .dropdown-content {
-                    display: block;
-                }
-
-                li:hover .dropdown-content .dropdown-content-item {
-                    display: block !important;
-                }
-
-                li:hover .dropdown-content .dropdown-content-item a {
-                    background-color: $mainColor;
-                    color: #fff;
-                    display: block;
-                    line-height: 25px;
-                    padding: 20px;
-                    text-decoration: none;
-                    text-align: center;
-                }
-
+           
                 li {
                     display: inline-block;
-                    margin-right: 40px;
-
-                    .dropdown-content {
-                        position: absolute;
-                        display: none;
-                        transform: translate(-44px, 0px);
-                        min-width: 160px;
-                        z-index:1;
-                    }
-
-                    .dropdown {
-                        text-decoration: none;
-                        color: #fff;
-                    }
-
-                    .dropdown:hover {
-                        color: green;
-                    }
+                    margin-right: 25px;
+                }
+                a{
+                    text-decoration:none;
+              
+                }
+                a:hover{
+                    background-color:#faf8f9;
+                    transition:0.5s ease;
                 }
             }
         }
@@ -123,11 +101,63 @@ $mainColor: red;
     }
 
     .modal-body {
+        h1, h3 {
+            text-align: center;
+        }
+
+        .sign-gmail {
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0 0 1px 0 #020202;
+            line-height: 35px;
+            margin-bottom: 10px;
+            background-color: #6d2a4f;
+            position: relative;
+
+            a {
+                color: #fff;
+            }
+
+            .icon-google {
+                position: absolute;
+                transform: translate(-55px, 10px);
+                color: #fff;
+            }
+        }
+
+        .sign-facebook {
+            background-color: blue;
+            position: relative;
+            line-height: 34px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 10px;
+
+            .icon-face {
+                position: absolute;
+                transform: translate(-47px, 10px);
+                color: #fff;
+            }
+
+            a {
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+
         .tab-content {
             .tab-pane {
                 form {
                     .Log-item {
                         margin-top: 20px;
+                        position: relative;
+
+                        .log {
+                            right: 0;
+                            transform: translate(-12px, 10px);
+                            position: absolute;
+                            color: #d8cfd3;
+                        }
                     }
 
                     .Send {
@@ -249,8 +279,12 @@ $mainColor: red;
 
 //strat section footer dev
 .Footer-dev {
-    background-color: #000;
-
+   background: #fff;
+    height: 400px;
+    display: flex;
+    border-top: 6px solid blue;
+    margin-top: 20px;
+    align-items: center;
     .container-fluid {
         .row {
             .AboutUS {
@@ -341,14 +375,13 @@ $mainColor: red;
 }
 
 .CopyRoght {
-    background-color: rgba(14, 31, 49, 0.5);
+    background-color:#faf8f9;
     height: 80px;
     text-align: center;
-    margin-top: 20px;
-
+        border-top:5px solid blue;
 
     p {
-        color: #d9534f;
+        color: rgba(2,0,36,1);
         padding-top: 19px;
         margin-top: -19px;
     }

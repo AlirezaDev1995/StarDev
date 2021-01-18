@@ -1,0 +1,18 @@
+﻿@model StarDev.Models.Courses
+
+@{
+    ViewBag.Title = "ViewCourse";
+}
+
+<h2>ViewCourse</h2>
+
+
+<div>
+    @foreach (var i in Model.ShowCourse)
+    {
+
+        @(new HtmlString(i.Content));
+    }
+</div>
+
+

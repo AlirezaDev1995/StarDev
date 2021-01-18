@@ -21,14 +21,14 @@ namespace StarDev.Controllers
         }
         public ActionResult Course(string name)
         {
-            DAL.StarDevEntities1 DC = new DAL.StarDevEntities1();
-            StarDev.Models.SearchContent _m = new Models.SearchContent();
-            var q = (from A in DC.MainContent
+            DAL.StarDB DC = new DAL.StarDB();
+            StarDev.Models.Courses _m = new Models.Courses();
+            var q = (from A in DC.Courses
                      where
-                     (!string.IsNullOrEmpty(name) ? A.Title.Contains(name) || A.Content.Contains(name) : true)
+                     (!string.IsNullOrEmpty(name) ? A.Title.Contains(name) || A.content.Contains(name) : true)
                      select A).ToList();
 
-            _m.GetAllContent = q;
+            _m.GetAllCourse = q;
 
             if (q.Count > 0)
             {

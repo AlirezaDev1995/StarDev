@@ -12,13 +12,10 @@ namespace StarDev.DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class Image
+    public partial class ViewCourse
     {
-        public int ID { get; set; }
+        public int ShowCourseID { get; set; }
         public string Title { get; set; }
-        public byte[] File { get; set; }
-    
-        public virtual Image Image1 { get; set; }
-        public virtual Image Image2 { get; set; }
+        public string Content { get; set; }
     }
 }

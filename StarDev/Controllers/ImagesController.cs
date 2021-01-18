@@ -21,7 +21,7 @@ namespace StarDev.Controllers
 
         {
 
-            DAL.StarDevEntities1 DC = new DAL.StarDevEntities1();
+            DAL.StarDB DC = new DAL.StarDB();
             System.Drawing.Image sourceimage = System.Drawing.Image.FromStream(file.InputStream);
             ImageConverter _imageConverter = new ImageConverter();
             byte[] xByte = (byte[])_imageConverter.ConvertTo(sourceimage, typeof(byte[]));
@@ -34,7 +34,7 @@ namespace StarDev.Controllers
         }
         public async Task<ActionResult> RenderImage(int id)
         {
-            DAL.StarDevEntities1 DC = new DAL.StarDevEntities1();
+            DAL.StarDB DC = new DAL.StarDB();
             DAL.Image item = await DC.Image.FindAsync(id);
             byte[] photoBack = item.File;
             return File(photoBack, "image/jpeg");

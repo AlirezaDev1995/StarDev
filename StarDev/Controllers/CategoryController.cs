@@ -9,7 +9,7 @@ namespace StarDev.Controllers
     public class CategoryController : Controller
     {
         // GET: Category
-        public ActionResult Index()
+        public ActionResult LayoutCourse()
         {
             return View();
         }

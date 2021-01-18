@@ -6,27 +6,29 @@
     <title>StarDeV</title>
     @Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")
+        <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+    <meta name="description" content="The description of my page" />
 </head>
 <body>
     <header>
-        <div class="bg-top" style="background-color:#000;">
+        <div class="bg-top">
             <div class="container-fluid">
                 <div class="TopHeader">
                     <div class="MenuTop">
-                        <nav class="d-xs-none d-sm-none  d-md-block">
+                        <nav class="d-xs-none d-sm-none  d-md-none d-lg-block">
                             <ol>
                                 <li>
                                     <a class="dropdown" href="/Home/Index">Home</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown" href="/Home/Course">Course</a>
-                                    <div class="dropdown-content">
-                                        <div class="dropdown-content-item"><a href="/Category/HtmlCourse">Html</a></div>
-                                        <div class="dropdown-content-item"><a href="/Category/CssCourse">Css</a></div>
-                                        <div class="dropdown-content-item"><a href="/Category/BootstrapCourse">Bootstrap</a></div>
-                                        <div class="dropdown-content-item"><a href="/Category/JavaCourse">Java</a></div>
-                                        <div class="dropdown-content-item"><a href="/Category/PaythonCourse">Python</a></div>
-                                    </div>
+                                    <a class="dropdown" href="/Coures/Courses">Course</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown" href="#">Blog</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown" href="#">LearningPath</a>
                                 </li>
                                 <li>
                                     <a class="dropdown" href="/Project/ProjectDemo">Project</a>
@@ -38,84 +40,90 @@
                                 <li>
                                     <a class="dropdown" href="/AboutUs/AboutTeam">AboutUs</a>
                                 </li>
+
+                                <li class="SignIn">
+                                    <div class="SignUp SignIn-item">
+                                        <button type="button" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-md btn-danger">
+                                            SignIN
+                                        </button>
+                                    </div>
+                                    <div class="Login SignIn-item">
+
+                                    </div>
+                                </li>
                             </ol>
                         </nav>
-                        <a href="#" class="fas fa-bars d-lg-none d-md-none  d-sm-block  menu-mobile " onclick="openNav()"> </a>
-
+                        <a href="#" class="fas fa-bars d-lg-none d-md-block  d-sm-block  menu-mobile " onclick="openNav()"> </a>
                     </div>
-                    <div class="SignIn">
-                        <div class="SignUp SignIn-item">
-                            <button type="button" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-md btn-danger">
-                                SignIN
-                            </button>
-                        </div>
-                        <div class="Login SignIn-item">
-
-                        </div>
+                    <div class="logo">
+                        <h1>CodeMaster</h1>
                     </div>
                 </div>
             </div>
         </div>
-       
+
     </header>
-    <main>
-        <div class="bg-slide">
-            <div class="container-fluid">
-                <div class="SearchDev">
-                    <form action="/Home/Course" method="post" enctype="multipart/form-data">
-                        <div class="search-box">
-                            <input type="text" name="name" value="" placeholder="Search" class="form-control" />
 
-                            <button type="submit" class="">
-                                <i class="fas fa-search search-icon "></i>
-                            </button>
-                        </div>
-                    </form>
-                    <h1>StarDev beest website for learn porogramming</h1>
+    <div class="bg-slide">
+        <div class="container-fluid">
+            <div class="SearchDev">
+                <form action="/Home/Course" method="post" enctype="multipart/form-data">
+                    <div class="search-box">
+                        <input type="text" name="name" value="" placeholder="Search" class="form-control" />
+
+                        <button type="submit" class="">
+                            <i class="fas fa-search search-icon "></i>
+                        </button>
+                    </div>
+                </form>
+                <h1>StarDev beest website for learn porogramming</h1>
+            </div>
+            <div class="social-media">
+                <div class="social-media-item">
+                    <a href="https://www.facebook.com/BuyWeb-105796091440053" class="">
+                        <span class="fab fa-facebook-f"></span>
+                    </a>
                 </div>
-                <div class="social-media">
-                    <div class="social-media-item">
-                        <a href="https://www.facebook.com/BuyWeb-105796091440053" class="">
-                            <span class="fab fa-facebook-f"></span>
-                        </a>
-                    </div>
-                    <div class="social-media-item">
-                        <a href="" class="">
-                            <span class="fab fa-twitter"></span>
-                        </a>
-                    </div>
-                    <div class="social-media-item">
-                        <a href="https://www.instagram.com/" class="">
-                            <span class="fab fa-instagram">
+                <div class="social-media-item">
+                    <a href="" class="">
+                        <span class="fab fa-twitter"></span>
+                    </a>
+                </div>
+                <div class="social-media-item">
+                    <a href="https://www.instagram.com/" class="">
+                        <span class="fab fa-instagram">
 
-                            </span>
-                        </a>
-                    </div>
-                    <div class="social-media-item">
-                        <a href="" class="">
-                            <span class="fab fa-telegram"></span>
-                        </a>
-                    </div>
-                    <div class="social-media-item">
-                        <a href="" class="">
-                            <span class="fab fa-whatsapp"></span>
-                        </a>
-                    </div>
-                    <div class="social-media-item">
-                        <a href="" class="">
-                            <span class="fab fa-pinterest"></span>
-                        </a>
-                    </div>
-
+                        </span>
+                    </a>
+                </div>
+                <div class="social-media-item">
+                    <a href="" class="">
+                        <span class="fab fa-telegram"></span>
+                    </a>
+                </div>
+                <div class="social-media-item">
+                    <a href="" class="">
+                        <span class="fab fa-whatsapp"></span>
+                    </a>
+                </div>
+                <div class="social-media-item">
+                    <a href="" class="">
+                        <span class="fab fa-pinterest"></span>
+                    </a>
                 </div>
 
-                <div class="text-center Project_Design">
-                    <a href="" class="Project btn btn-success btn-lg">ProjectManagement</a>
-                    <a href="" class="Design btn btn-info btn-lg">WebDesign</a>
-                </div>
+            </div>
+
+            <div class="text-center Project_Design">
+                <a href="" class="Project btn btn-success btn-lg">ProjectManagement</a>
+                <a href="" class="Design btn btn-info btn-lg">WebDesign</a>
             </div>
         </div>
-        @RenderBody()
+    </div>
+    <main>
+        <div class="">
+            @RenderBody()
+        </div>
     </main>
     <footer>
         <div class="Footer-dev">
@@ -198,13 +206,14 @@
                     </div>
                 </div>
             </div>
-            <div class="CopyRoght">
-                <p>
-                    CopyRight © 2021 - 2022 Star Dev-Powered By Asp.net
+         
+        </div>
+        <div class="CopyRoght">
+            <p>
+                CopyRight © 2021 - 2022 Star Dev-Powered By Asp.net
 
-                </p>
-                <p>Design credit: Alireza Akbarzadeh</p>
-            </div>
+            </p>
+            <p>Design credit: Alireza Akbarzadeh</p>
         </div>
     </footer>
     @*start section modal menu*@
@@ -220,7 +229,23 @@
                 </div>
                 <div class="modal-body">
                     <div class="container">
-                        <h1>Logo</h1>
+                        <h1>Create an Account</h1>
+                        <h3>sgin in complete your order</h3>
+                        <div class="sign-gmail">
+                            <span class="fab fa-google icon-google"></span>
+
+                            <a href="">
+                                <span>Sign In with Google</span>
+                            </a>
+                        </div>
+                        <div class="sign-facebook">
+                            <span class="fab fa-facebook icon-face"></span> 
+                            <a href="">
+                                <span>Sign In with FaceBook</span>
+                            </a>
+                       
+                        </div>
+
                         <ul class="nav nav-tabs">
                             <li class="active"><a data-toggle="tab" href="#home">Login</a></li>
                             <li><a data-toggle="tab" href="#menu1">SignUp</a></li>
@@ -229,14 +254,12 @@
                             <div id="home" class="tab-pane fade in active">
                                 <form action="" method="post">
                                     <div class="Log-item">
-                                        <label>UserName:</label>
-                                        <input type="text" value="" class="form-control" />
+                                        <span class="fa fa-mail-bulk log"></span>
+                                        <input type="text" value="" class="form-control" placeholder="Enter your Email Address"  />
                                     </div>
                                     <div class="Log-item">
-                                        <label>
-                                            Pass:
-                                        </label>
-                                        <input type="password" value="" class="form-control" />
+                                        <span class="fa fa-lock log"></span>
+                                        <input type="password" value="" class="form-control" placeholder="Enter your PassWord" />
                                     </div>
                                     <div class="Send">
                                         <button class="btn btn-success btn-md" type="submit">Send</button>
@@ -313,6 +336,12 @@
                     </li>
                     <li>
                         <a class="dropdown" href="Home/AboutUs">AboutUs</a>
+                    </li>
+                    <li>
+                        <a class="dropdown" href="#">Blog</a>
+                    </li>
+                    <li>
+                        <a class="dropdown" href="#">LearningPath</a>
                     </li>
                 </ol>
 

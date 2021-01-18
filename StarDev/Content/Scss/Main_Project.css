@@ -1,5 +1,5 @@
 body {
-  background-color: #fafafa; }
+  background-color: #fafafa !important; }
 
 .bg-top {
   color: #fff;
@@ -171,9 +171,11 @@ body {
     color: #fff; }
 
 .Footer-dev {
-  background: linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%);
+  background: #fff;
   height: 400px;
   display: flex;
+  border-top: 6px solid blue;
+  margin-top: 20px;
   align-items: center; }
   .Footer-dev .container-fluid .row .AboutUS h2 {
     color: #d9534f; }
@@ -219,8 +221,7 @@ body {
   background-color: #faf8f9;
   height: 80px;
   text-align: center;
-  border-bottom: 3px solid;
-  margin-top: 20px; }
+  border-top: 5px solid blue; }
   .CopyRoght p {
     color: #020024;
     padding-top: 19px;
@@ -374,6 +375,18 @@ body {
     height: auto !important; }
 
   .Footer-dev {
-    height: auto !important; } }
+    height: auto; }
 
-/*# sourceMappingURL=Main_project.css.map */
+  .bg-slide {
+    height: auto; }
+
+  .marketing, .manage {
+    margin-top: 20px; }
+
+  .OurWork {
+    height: auto !important; } }
+@media (min-width: 768px) {
+  .marketing, .manage {
+    margin-top: 20px; } }
+
+/*# sourceMappingURL=Main_Project.css.map */

@@ -1,0 +1,14 @@
+.Html_Course .HeadLine {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  height: 1000px;
+  overflow-y: scroll; }
+  .Html_Course .HeadLine h1 {
+    font-size: 18px; }
+.Html_Course .BodyLine {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px; }
+
+/*# sourceMappingURL=Category.css.map */
