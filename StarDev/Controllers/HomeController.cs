@@ -21,7 +21,7 @@ namespace StarDev.Controllers
         }
         public ActionResult Course(string name)
         {
-            DAL.StarDB DC = new DAL.StarDB();
+            DAL.Entities DC = new DAL.Entities();
             StarDev.Models.Courses _m = new Models.Courses();
             var q = (from A in DC.Courses
                      where

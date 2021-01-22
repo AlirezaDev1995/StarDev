@@ -1,12 +1,10 @@
-﻿body {
-}
-
-$mainColor: red;
-
+﻿
 .bg-top {
     color: #fff;
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
 }
+
+@import "variables.scss";
 
 .TopHeader {
     display: flex;
@@ -23,7 +21,7 @@ $mainColor: red;
 
         .SignUp a {
             color: #fff;
-            background-color: $mainColor;
+            background-color:$primary-color;
             text-decoration: none;
             width: 79px;
             text-align: center;
@@ -34,7 +32,7 @@ $mainColor: red;
 
         .Login a {
             color: #fff;
-            background-color: $mainColor;
+            background-color: $primary-color;
             text-decoration: none;
             width: 79px;
             text-align: center;
@@ -57,19 +55,17 @@ $mainColor: red;
             ol {
                 position: relative;
                 padding: 0;
-           
+
                 li {
                     display: inline-block;
                     margin-right: 25px;
                 }
-                a{
-                    text-decoration:none;
-              
+
+                a {
+                    color:#fff;
+                    text-decoration: none;
                 }
-                a:hover{
-                    background-color:#faf8f9;
-                    transition:0.5s ease;
-                }
+
             }
         }
     }
@@ -86,7 +82,7 @@ $mainColor: red;
             align-items: center;
 
             button {
-                background-color: $mainColor;
+                background-color: $primary-color;
                 line-height: 33px;
                 width: 58px;
                 display: block;
@@ -126,7 +122,7 @@ $mainColor: red;
         }
 
         .sign-facebook {
-            background-color: blue;
+            background-color: $primary-color;
             position: relative;
             line-height: 34px;
             text-align: center;
@@ -216,11 +212,14 @@ $mainColor: red;
 
             ol {
                 li {
+                    margin-left: 13px;
                     line-height: 25px;
                     list-style: none;
+                    text-align: left;
 
                     a {
                         color: #fff;
+                        text-decoration:none;
                     }
                 }
             }
@@ -265,7 +264,7 @@ $mainColor: red;
                 padding: 8px 8px 8px 32px;
                 text-decoration: none;
                 font-size: 25px;
-                color: #818181;
+                color: $text-color;
                 display: block;
                 transition: 0.3s;
             }
@@ -279,29 +278,34 @@ $mainColor: red;
 
 //strat section footer dev
 .Footer-dev {
-   background: #fff;
-    height: 400px;
+    background: #fff;
+    padding: 20px;
     display: flex;
-    border-top: 6px solid blue;
+    border-top: 6px solid #fc4364;
     margin-top: 20px;
     align-items: center;
+
     .container-fluid {
         .row {
             .AboutUS {
 
                 h2 {
-                    color: #d9534f;
+                    color: #fc4364;
                 }
 
                 p {
-                    color: #faf8f9;
+                    color: $text-color;
+                    font-size:18px;
                     line-height: 25px;
                 }
             }
 
             .Course {
+
                 h2 {
-                    color: #d9534f;
+                    border-bottom: 5px solid;
+                    color:#fc4364;
+                    padding-bottom: 5px;
                 }
 
                 ul {
@@ -312,6 +316,19 @@ $mainColor: red;
                         list-style: none;
 
                         a {
+                            color: $text-color;
+                            text-decoration: none;
+                            border: 1px solid $text-color;
+                            border-radius: 4px;
+                            width: 118px;
+                            display: block;
+                            line-height: 33px;
+                            text-align: center;
+                        }
+
+                        a:hover {
+                            background-color: #fc4364;
+                            transition: 0.5s ease;
                             color: #fff;
                         }
                     }
@@ -325,7 +342,6 @@ $mainColor: red;
 
                 form {
                     input {
-                        border: none;
                         line-height: 27px;
                         border-radius: 3px;
                         width: 50%;
@@ -340,7 +356,7 @@ $mainColor: red;
                 .social-media-item {
                     display: inline-block;
                     margin-right: 15px;
-                    background-color: #fff;
+                    background-color: #e6e8ef;
                     width: 46px;
                     TEXT-ALIGN: CENTER;
                     border-radius: 5px;
@@ -351,10 +367,14 @@ $mainColor: red;
                     }
                 }
             }
-
+            
             .QuicMenu {
+
+
                 h2 {
-                    color: #d9534f;
+                    color: #fc4364;
+                    border-bottom: 5px solid #fc4364;
+                    padding-bottom: 5px;
                 }
 
                 ul {
@@ -365,6 +385,19 @@ $mainColor: red;
                         margin-top: 10px;
 
                         a {
+                            color: #8f868b;
+                            text-decoration: none;
+                            border: 1px solid #8f868b;
+                            border-radius: 4px;
+                            width: 118px;
+                            display: block;
+                            line-height: 33px;
+                            text-align: center;
+                        }
+
+                        a:hover {
+                            background-color: #fc4364;
+                            transition: 0.5s ease;
                             color: #fff;
                         }
                     }
@@ -375,14 +408,13 @@ $mainColor: red;
 }
 
 .CopyRoght {
-    background-color:#faf8f9;
+    background-color: #faf8f9;
     height: 80px;
     text-align: center;
-        border-top:5px solid blue;
+    border-top: 5px solid #fc4364;
 
     p {
-        color: rgba(2,0,36,1);
-        padding-top: 19px;
-        margin-top: -19px;
+        color: $text-color;
+        margin: 10px 0 10px 0;
     }
 }

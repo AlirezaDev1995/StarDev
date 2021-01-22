@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAKI,sBAAU;EACN,gBAAgB,EAAE,IAAI;EACtB,aAAa,EAAE,GAAG;EAClB,OAAO,EAAE,IAAI;EACb,MAAM,EAAC,MAAM;EACb,UAAU,EAAE,MAAM;EAClB,yBAAG;IACC,SAAS,EAAE,IAAI;AAWvB,sBAAU;EACN,gBAAgB,EAAE,IAAI;EACtB,OAAO,EAAE,IAAI;EACb,aAAa,EAAE,GAAG",
-"sources": ["Category.scss"],
-"names": [],
-"file": "Category.css"
-}

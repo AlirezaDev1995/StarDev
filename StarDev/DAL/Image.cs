@@ -14,11 +14,19 @@ namespace StarDev.DAL
     
     public partial class Image
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Image()
+        {
+            this.Project = new HashSet<Project>();
+        }
+    
         public int ID { get; set; }
         public string Title { get; set; }
         public byte[] File { get; set; }
     
         public virtual Image Image1 { get; set; }
         public virtual Image Image2 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Project> Project { get; set; }
     }
 }

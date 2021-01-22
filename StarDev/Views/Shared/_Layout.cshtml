@@ -3,12 +3,14 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StarDeV</title>
-    @Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")
-        <link href="~/Content/bootstrap.css" rel="stylesheet" />
-
+    <title>TopProgramer</title>
     <meta name="description" content="The description of my page" />
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    <link rel="preconnect" href="https://fonts.gstatic.com">    
+
+
+
 </head>
 <body>
     <header>
@@ -16,7 +18,7 @@
             <div class="container-fluid">
                 <div class="TopHeader">
                     <div class="MenuTop">
-                        <nav class="d-xs-none d-sm-none  d-md-none d-lg-block">
+                        <nav class="d-none d-lg-block">
                             <ol>
                                 <li>
                                     <a class="dropdown" href="/Home/Index">Home</a>
@@ -53,10 +55,10 @@
                                 </li>
                             </ol>
                         </nav>
-                        <a href="#" class="fas fa-bars d-lg-none d-md-block  d-sm-block  menu-mobile " onclick="openNav()"> </a>
+                        <a href="#" style="text-decoration:none;" class="fas fa-bars d-lg-none d-md-block  d-sm-block  menu-mobile " onclick="openNav()"> </a>
                     </div>
                     <div class="logo">
-                        <h1>CodeMaster</h1>
+                        <h1>TopProgramer</h1>
                     </div>
                 </div>
             </div>
@@ -76,7 +78,8 @@
                         </button>
                     </div>
                 </form>
-                <h1>StarDev beest website for learn porogramming</h1>
+                <h1>Top Programer beest website for learn porogramming</h1>
+                <h3 class="text-center text-white">bulid website fast and secure</h3>
             </div>
             <div class="social-media">
                 <div class="social-media-item">
@@ -128,8 +131,8 @@
     <footer>
         <div class="Footer-dev">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-4 AboutUS">
+                <div class="row mt-5 mb-5">
+                    <div class="col-md-4 col-sm-6 col-xs-12 AboutUS">
                         <h2>AboutUS</h2>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -142,31 +145,28 @@
                             sunt in culpa qui officia deserunt mollit anim id est laborum.
                         </p>
                     </div>
-                    <div class="col-md-2 Course">
-                        <h2>Course</h2>
-                        <ul>
-                            <li><a href="#">BackEnd</a></li>
-                            <li><a href="#">FrontEnd</a></li>
-                            <li><a href="#">Design</a></li>
-                            <li><a href="#">DataBase</a></li>
-                            <li><a href="#">Android</a></li>
-                        </ul>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <h3>
+                            Trust us safely
+                        </h3>
+
+                        <div class="row">
+                            <div class="col-4">
+                                <img src="~/Img/enamad.png" height="100" alt="" style="background-color:#e6e8ef;padding:10px;" />
+                            </div>
+                            <div class="col-4">
+                                <img src="~/Img/enamad.png" height="100" style="background-color:#e6e8ef;padding:10px;" alt="" />
+                            </div>
+                            <div class="col-4">
+                                <img src="~/Img/enamad.png" height="100" style="background-color:#e6e8ef;padding:10px;" alt="" />
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-2 QuicMenu">
-                        <h2>QuicMenu</h2>
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Course</a></li>
-                            <li><a href="#">Project</a></li>
-                            <li><a href="#">AboutUS</a></li>
-                            <li><a href="#">ContactUS</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4 new-course">
+                    <div class="col-md-4 col-sm-6 col-xs-12 new-course">
                         <h2>news and new course</h2>
                         <form>
                             <input type="email" value="" />
-                            <button class="btn btn-sm btn-success">Send</button>
+                            <button class="btn btn-md btn-success">Send</button>
                         </form>
                         <div class="social-media">
                             <div class="social-media-item">
@@ -205,8 +205,65 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="row mt-5 mb-5">
+                    <div class="col-md-3 col-sm-6 QuicMenu">
+                        <div style="padding:10px;border-radius:4px; height:340px;">
+
+                            <h2>Popular Frame work</h2>
+
+                            <ul class="col-md-6">
+                                <li><a href="#">Asp.net MvC</a></li>
+                                <li><a href="#">Asp.net Core</a></li>
+                                <li><a href="#">Django</a></li>
+                                <li><a href="#">Bootstrap</a></li>
+                                <li><a href="#">React</a></li>
+                                <li><a href="#">Angular</a></li>
+                            </ul>
+
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 Course">
+                        <div style="padding:10px;border-radius:4px; height:340px;">
+
+                            <h2>FrontEnd Developer</h2>
+                            <ul>
+                                <li><a href="#">BackEnd</a></li>
+                                <li><a href="#">FrontEnd</a></li>
+                                <li><a href="#">Design</a></li>
+                                <li><a href="#">DataBase</a></li>
+                                <li><a href="#">Android</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 QuicMenu">
+                        <div style="padding:10px;border-radius:4px; height:340px;">
+                            <h2>BackEnd Developer</h2>
+                            <ul>
+                                <li><a href="#">C#</a></li>
+                                <li><a href="#">Python</a></li>
+                                <li><a href="#">PHp</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 QuicMenu">
+                        <div style="padding:10px;border-radius:4px; height:340px;">
+
+                            <h2>Mobile Developer </h2>
+                            <ul>
+                                <li><a href="#">Java</a></li>
+                                <li><a href="#">Swift</a></li>
+                                <li><a href="#">Xamarin</a></li>
+                                <li><a href="#">Katlin</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-         
+
         </div>
         <div class="CopyRoght">
             <p>
@@ -218,8 +275,8 @@
     </footer>
     @*start section modal menu*@
     <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal fade " id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header Title-top-sign">
                     <h3 class="modal-title" id="exampleModalLongTitle">SigIn StarDev</h3>
@@ -239,11 +296,11 @@
                             </a>
                         </div>
                         <div class="sign-facebook">
-                            <span class="fab fa-facebook icon-face"></span> 
+                            <span class="fab fa-facebook icon-face"></span>
                             <a href="">
                                 <span>Sign In with FaceBook</span>
                             </a>
-                       
+
                         </div>
 
                         <ul class="nav nav-tabs">
@@ -255,7 +312,7 @@
                                 <form action="" method="post">
                                     <div class="Log-item">
                                         <span class="fa fa-mail-bulk log"></span>
-                                        <input type="text" value="" class="form-control" placeholder="Enter your Email Address"  />
+                                        <input type="text" value="" class="form-control" placeholder="Enter your Email Address" />
                                     </div>
                                     <div class="Log-item">
                                         <span class="fa fa-lock log"></span>
@@ -314,28 +371,23 @@
 
         <div class="text-left box-nav-menu">
             <div class="box-nav-menu-item">
+
                 <ol>
-                    <li>
-                        <a class="dropdown" href="Home/Index">Home</a>
-                    </li>
-                    <li>
-                        <a class="" href="Home/Course">Course</a>
-                        <div class="dropdown">
-                            <div class="dropdown-content-item"><a href="#">Html</a></div>
-                            <div class="dropdown-content-item"><a href="#">Css</a></div>
-                            <div class="dropdown-content-item"><a href="#">Bootstrap</a></div>
-                            <div class="dropdown-content-item"><a href="#">Java</a></div>
+                    <li class="SignIn">
+                        <div class="SignUp SignIn-item">
+                            <button type="button" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-md btn-danger">
+                                SignIN
+                            </button>
+                        </div>
+                        <div class="Login SignIn-item">
+
                         </div>
                     </li>
                     <li>
-                        <a class="dropdown" href="Home/Project">Project</a>
-
+                        <a class="dropdown" href="/Home/Index">Home</a>
                     </li>
                     <li>
-                        <a class="dropdown" href="Home/ContactUS">ContactUS</a>
-                    </li>
-                    <li>
-                        <a class="dropdown" href="Home/AboutUs">AboutUs</a>
+                        <a class="dropdown" href="/Coures/Courses">Course</a>
                     </li>
                     <li>
                         <a class="dropdown" href="#">Blog</a>
@@ -343,8 +395,19 @@
                     <li>
                         <a class="dropdown" href="#">LearningPath</a>
                     </li>
-                </ol>
+                    <li>
+                        <a class="dropdown" href="/Project/ProjectDemo">Project</a>
 
+                    </li>
+                    <li>
+                        <a class="dropdown" href="/ContactUs/Contact">ContactUS</a>
+                    </li>
+                    <li>
+                        <a class="dropdown" href="/AboutUs/AboutTeam">AboutUs</a>
+                    </li>
+
+
+                </ol>
             </div>
         </div>
     </div>
@@ -360,6 +423,7 @@
     </script>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+
+
 </body>
 </html>

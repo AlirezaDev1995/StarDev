@@ -16,7 +16,7 @@ namespace StarDev.Controllers
 
         public ActionResult Courses(int page=1)
         {
-            DAL.StarDB DC = new DAL.StarDB();
+            DAL.Entities DC = new DAL.Entities();
             StarDev.Models.Courses _m = new Models.Courses();
             int TotalCount = DC.Courses.Count();
             int PageItem =6;
@@ -36,7 +36,7 @@ namespace StarDev.Controllers
 
         public ActionResult ViewCourse(int? id)
         {
-            DAL.StarDB DC = new DAL.StarDB();
+            DAL.Entities DC = new DAL.Entities();
             StarDev.Models.Courses _m = new Models.Courses();
             _m.ShowCourse = DC.ViewCourse.Where(x => x.ShowCourseID == id).ToList();
             return View(_m);

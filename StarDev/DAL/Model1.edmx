@@ -4,7 +4,15 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="StarDevModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="startdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+          </Key>
+          <Property Name="ProjectID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ImageID" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Courses">
           <Key>
             <PropertyRef Name="CourseID" />
@@ -41,7 +49,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="StarDevModelStoreContainer">
+        <Association Name="FK_Project_Project">
+          <End Role="Image" Type="Self.Image" Multiplicity="1" />
+          <End Role="Project" Type="Self.Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Image">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Project">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="startdbModelStoreContainer">
+          <EntitySet Name="Project" EntityType="Self.Project" Schema="8152_starname" store:Type="Tables" />
           <EntitySet Name="Courses" EntityType="Self.Courses" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Image" EntityType="Self.Image" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ViewCourse" EntityType="Self.ViewCourse" Schema="dbo" store:Type="Tables" />
@@ -49,11 +70,15 @@
             <End Role="Image" EntitySet="Image" />
             <End Role="Image1" EntitySet="Image" />
           </AssociationSet>
+          <AssociationSet Name="FK_Project_Project" Association="Self.FK_Project_Project">
+            <End Role="Image" EntitySet="Image" />
+            <End Role="Project" EntitySet="Project" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="StarDevModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="startdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Courses">
           <Key>
             <PropertyRef Name="CourseID" />
@@ -71,6 +96,15 @@
           <Property Name="File" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
           <NavigationProperty Name="Image1" Relationship="Self.FK_Image_Image" FromRole="Image" ToRole="Image1" />
           <NavigationProperty Name="Image2" Relationship="Self.FK_Image_Image" FromRole="Image1" ToRole="Image" />
+          <NavigationProperty Name="Project" Relationship="startdbModel.FK_Project_Project" FromRole="Image" ToRole="Project" />
+        </EntityType>
+        <EntityType Name="ViewCourse">
+          <Key>
+            <PropertyRef Name="ShowCourseID" />
+          </Key>
+          <Property Name="ShowCourseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_Image_Image">
           <End Role="Image" Type="Self.Image" Multiplicity="1" />
@@ -84,31 +118,49 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="StarDB" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Courses" EntityType="Self.Courses" />
           <EntitySet Name="Image" EntityType="Self.Image" />
+          <EntitySet Name="ViewCourse" EntityType="Self.ViewCourse" />
           <AssociationSet Name="FK_Image_Image" Association="Self.FK_Image_Image">
             <End Role="Image" EntitySet="Image" />
             <End Role="Image1" EntitySet="Image" />
           </AssociationSet>
-          <EntitySet Name="ViewCourse" EntityType="StarDevModel.ViewCourse" />
+          <EntitySet Name="Project" EntityType="startdbModel.Project" />
+          <AssociationSet Name="FK_Project_Project" Association="startdbModel.FK_Project_Project">
+            <End Role="Image" EntitySet="Image" />
+            <End Role="Project" EntitySet="Project" />
+          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="ViewCourse">
+        <EntityType Name="Project">
           <Key>
-            <PropertyRef Name="ShowCourseID" />
+            <PropertyRef Name="ProjectID" />
           </Key>
-          <Property Name="ShowCourseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ImageID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Image" Relationship="startdbModel.FK_Project_Project" FromRole="Project" ToRole="Image" />
         </EntityType>
+        <Association Name="FK_Project_Project">
+          <End Type="startdbModel.Image" Role="Image" Multiplicity="1" />
+          <End Type="startdbModel.Project" Role="Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Image">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Project">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="StarDevModelStoreContainer" CdmEntityContainer="StarDB">
+        <EntityContainerMapping StorageEntityContainer="startdbModelStoreContainer" CdmEntityContainer="Entities">
           <EntitySetMapping Name="Courses">
-            <EntityTypeMapping TypeName="StarDevModel.Courses">
+            <EntityTypeMapping TypeName="startdbModel.Courses">
               <MappingFragment StoreEntitySet="Courses">
                 <ScalarProperty Name="CourseID" ColumnName="CourseID" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
@@ -117,7 +169,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Image">
-            <EntityTypeMapping TypeName="StarDevModel.Image">
+            <EntityTypeMapping TypeName="startdbModel.Image">
               <MappingFragment StoreEntitySet="Image">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
@@ -126,11 +178,20 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ViewCourse">
-            <EntityTypeMapping TypeName="StarDevModel.ViewCourse">
+            <EntityTypeMapping TypeName="startdbModel.ViewCourse">
               <MappingFragment StoreEntitySet="ViewCourse">
-                <ScalarProperty Name="Content" ColumnName="Content" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="ShowCourseID" ColumnName="ShowCourseID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Project">
+            <EntityTypeMapping TypeName="startdbModel.Project">
+              <MappingFragment StoreEntitySet="Project">
+                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

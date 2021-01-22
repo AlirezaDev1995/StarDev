@@ -13,10 +13,10 @@ namespace StarDev.DAL
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class StarDB : DbContext
+    public partial class Entities : DbContext
     {
-        public StarDB()
-            : base("name=StarDB")
+        public Entities()
+            : base("name=Entities")
         {
         }
     
@@ -28,5 +28,6 @@ namespace StarDev.DAL
         public virtual DbSet<Courses> Courses { get; set; }
         public virtual DbSet<Image> Image { get; set; }
         public virtual DbSet<ViewCourse> ViewCourse { get; set; }
+        public virtual DbSet<Project> Project { get; set; }
     }
 }
