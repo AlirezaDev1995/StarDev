@@ -373,8 +373,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="BLL\" />
-    <Folder Include="BOL\" />
     <Folder Include="FrameWork\" />
     <Folder Include="Function\" />
   </ItemGroup>
